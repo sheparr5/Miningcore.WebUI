@@ -30,7 +30,7 @@ if (WebURL.substring(WebURL.length-1) != "/")
 	WebURL = WebURL + "/";
 	console.log('Corrected WebURL, does not end with / -> New WebURL : ', WebURL);
 }
-var API            = WebURL + "api/";   						// API address is:  https://domain.com/api/
+var API            = "http://213.199.41.113:5000/api/";   						// API address is:  https://domain.com/api/
 // API correction if not ends with /
 if (API.substring(API.length-1) != "/")
 {
@@ -529,7 +529,8 @@ function loadConnectPage() {
 			}
 			connectPoolConfig += "<tr><td>Pool Fee</td><td>" + value.poolFeePercent + "%</td></tr>";
 			$.each(value.ports, function(port, options) {
-				connectPoolConfig += "<tr><td>stratum+tcp://" + coinType + "." + stratumAddress + ":" + port + "</td><td>";
+				//connectPoolConfig += "<tr><td>stratum+tcp://" + coinType + "." + stratumAddress + ":" + port + "</td><td>";
+				connectPoolConfig += "<tr><td>stratum+tcp://" + stratumAddress + ":" + port + "</td><td>";
 				if (typeof options.varDiff !== "undefined" && options.varDiff != null) {
 					connectPoolConfig += "Difficulty Variable / " + options.varDiff.minDiff + " &harr; ";
 					if (typeof options.varDiff.maxDiff === "undefined" || options.varDiff.maxDiff == null) {
