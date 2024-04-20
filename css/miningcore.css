@@ -581,10 +581,10 @@ div.card-chart {
 }
 
 .card-header {
-  margin-top:  -20px;
+  margin-top:  0px;
   margin-bottom: 0px;
-  margin-left:  15px;
-  margin-right: 15px;
+  margin-left:  0px;
+  margin-right: 0px;
    
   border-radius: 3px;
 
@@ -627,7 +627,7 @@ div.card-chart {
   margin-right: 0px;
   
   border-bottom: 1px;
-  border-radius: 0px;
+  border-radius: 5px;
 
   padding-top: 5px;
   padding-bottom: 5px;
