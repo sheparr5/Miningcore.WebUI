@@ -923,9 +923,9 @@ function loadStatsChart() {
         } else {
           labels.push("");
         }
-		poolHashRate.push(value.poolHashrate);
+		    poolHashRate.push(value.poolHashrate);
         networkHashRate.push(value.networkHashrate);
-		networkDifficulty.push(value.networkDifficulty);
+		    networkDifficulty.push(value.networkDifficulty);
         connectedMiners.push(value.connectedMiners);
         connectedWorkers.push(value.connectedWorkers);
       });
@@ -993,11 +993,25 @@ function loadDashboardData(walletAddress) {
     .done(function(data) {
       $("#pendingShares").text(_formatter(data.pendingShares, 0, ""));
       var workerHashRate = 0;
+      // Using shares to calculate estimate
+      // Step 1: init sharesPerSecond var
+      var sharesPerSecond = 0;
       if (data.performance) {
         $.each(data.performance.workers, function(index, value) {
           workerHashRate += value.hashrate;
-        });
+          // Step 2: combine shares/sec value of all workers
+          sharesPerSecond += value.sharesPerSecond
+        });        
       }
+
+      
+      var seconds_in_24hours = (60 * 60 * 24) // seconds in a day
+      // Step 3: extrapolate out shares/second to coins/day
+      var worker_24h_estimate = sharesPerSecond * seconds_in_24hours
+
+      // Step 4: setting value to 24h reward HTML element
+      $("#minerReward").text(_formatter(worker_24h_estimate, 5, ""));
+
       $("#minerHashRate").text(_formatter(workerHashRate, 5, "H/s"));
       $("#pendingBalance").text(_formatter(data.pendingBalance, 5, ""));
       $("#paidBalance").text(_formatter(data.todayPaid, 5, ""));
