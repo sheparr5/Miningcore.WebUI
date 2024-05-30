@@ -1,0 +1,110 @@
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="card bg-navy">
+            <div class="card-top card-shadow bg-yellow">
+                <center>
+                    <h3 class="card-title">Wallet Address</h3>
+                    <p class="card-category">Let's enter your wallet address and make magic!</p>
+                </center>
+            </div>
+            <div class="card-bottom">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="card-input input-group form-group bmd-form-group">
+                                <input class="form-control" type="text" id="walletAddress" placeholder="Wallet Address">
+                            </div>
+                        </div>
+                    </div>
+                    <center>
+                        <button id="load-wallet" onclick="loadWallet(this.id)" type="submit" class="btn btn-info btn-fill btn-wd">Show me my crypto!</button>
+                    </center>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--
+
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                   <div class="card bg-navy">
+                                        <div class="card-top">
+                                                <center><h4 class="card-category"><i class="fas fa-wave-square"></i> Your Hash Rate</h4></center>
+                                        </div>
+                                        <div class="card-header card-chart bg-green-gradient">
+                                                <div class="ct-chart" id="chartDashboardHashRate"></div>
+                                        </div>
+
+                                         <div class="card-bottom">
+                                                <center><h3 class="card-title"><div id="minerHashRate"></div></h3></center>
+                                        </div>
+
+
+                                </div>
+                        </div>
+                -->
+    <div class="col-6">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="info-box bg-navy">
+                    <span class="info-box-text">Pending:</span>
+                    <span class="info-box-number">
+                        <div id="pendingShares">Shares: 3.47 k</div>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="info-box bg-navy">
+                    <span class="info-box-text">24 Hour Estimate:</span>
+                    <span class="info-box-number">
+                        <div id="minerReward">6.7392 k</div>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="info-box bg-navy">
+                    <span class="info-box-text">Pending Balance:</span>
+                    <span class="info-box-number">
+                        <div id="pendingBalance">0 </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12">
+                <div class="info-box bg-navy">
+                    <span class="info-box-text">Payments Made:</span>
+                    <span class="info-box-number">
+                        <div id="paidBalance">24hr Paid: 3.72 k<br>Lifetime Paid: 48.36 k</div>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="info-box bg-navy">
+                    <span class="info-box-text">Threshold:</span>
+                    <span class="info-box-number">
+                        <div id="paymentThreshold">Not set</div>
+                        <!--Set custom treshold form -->
+                        <button class="btn btn-info btn-fill btn-sm" onclick="openModal()">Set
+                            threshold</button>
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal" style="display: none;">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close" onclick="closeModal()">×</span>
+                                <form id="ipFormModal" onsubmit="handleSubmit(); return false;">
+                                    <label for="ipAddressModal">IP Address:</label><br>
+                                    <input type="text" id="ipAddressModal" name="ipAddressModal" required="" pattern="\d>
+                                                                        <!-- The pattern attribute enforces the input to match the IP address pattern--> 
+
+                                                                        <label for=" thresholdvaluemodal"="">Threshold Value:<br>
+                                    <input type="number" id="thresholdValueModal" name="thresholdValueModal" required="">
+                                    <br><br> <button class="btn btn-info btn-fill btn-wd" type="submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </span></div>
+            </div>
+        </div>
+    </div>
+</div>
